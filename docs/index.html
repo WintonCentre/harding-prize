@@ -2,347 +2,388 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>The Harding Prize for Trustworthy Communication</title>
+    <meta charset="utf-8" />
+    <title>The Harding Prize for Trustworthy Communication</title>
 
-  <meta name="description" content="The Harding Prize for Trustworthy Communication">
-  <meta property="og:title" content="The Harding Prize for Trustworthy Communication" />
-  <meta property="og:description" content="competition - communication that helps" />
-  <meta property="og:type" content="article" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="The Harding Prize for Trustworthy Communication ">
+    <meta property="og:description" content="competition - communication that helps">
+    <meta property="og:title" content="The Harding Prize for Trustworthy Communication" />
+    <meta property="og:type" content="article" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
-  <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
 
-  <style>
-    /* --- Cambridge branding --- */
-    :root {
-      --cambridge: #A3C1AD;          /* Cambridge blue */
-      --cambridge-dark: #5B8570;     /* darker tone for headings/contrast */
-      --cambridge-very-light: #F4F8F6; /* subtle background tint */
-      --text-dark: #222;
-      --text-muted: #666;
-    }
+    <style>
+        /* Brand palette */
+        :root {
+            --cambridge: #A3C1AD;          /* Cambridge blue */
+            --cambridge-dark: #5B8570;     /* darker tone for contrast */
+            --cambridge-very-light: #F4F8F6; /* subtle tinted bg */
+            --text-dark: #222;
+            --text-muted: #666;
+        }
 
-    /* Navbar tidy up */
-    .navbar {
-      margin-bottom: 0;
-      border-bottom: 1px solid #e5e5e5;
-    }
-    .navbar-brand { font-weight: 600; }
-    .navbar-default .navbar-brand,
-    .navbar-default .navbar-nav > li > a {
-      color: #1d1d1f;
-    }
-    .navbar-default .navbar-nav > li > a:hover {
-      color: var(--cambridge-dark);
-    }
+        /* Navbar alignment and hover color */
+        .navbar { margin-bottom: 0; border-bottom: 1px solid #e5e5e5; }
+        .navbar-default .navbar-brand,
+        .navbar-default .navbar-nav > li > a { color: #1d1d1f; }
+        .navbar-default .navbar-nav > li > a:hover { color: var(--cambridge-dark); }
 
-    /* Hero banner */
-    .hero {
-      background: var(--cambridge-very-light);
-      padding: 40px 0 25px;
-      border-bottom: 1px solid #e5e5e5;
-    }
-    .site-title {
-      margin: 0;
-      font-size: 34px;
-      font-weight: 700;
-      color: #1d1d1f;
-      text-align: center;
-    }
-    .site-tagline {
-      margin-top: 8px;
-      font-size: 18px;
-      color: var(--text-muted);
-      text-align: center;
-      font-style: italic;
-    }
-    .announcement {
-      margin: 18px auto 0;
-      text-align: center;
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--cambridge-dark);
-    }
+        /* Hero banner */
+        .hero {
+            background: var(--cambridge-very-light);
+            padding: 40px 0 25px;
+            border-bottom: 1px solid #e5e5e5;
+            text-align: center;
+        }
+        .hero .site-title {
+            margin: 0;
+            font-size: 34px;
+            font-weight: 700;
+            color: #1d1d1f;
+        }
+        .hero .site-tagline {
+            margin-top: 8px;
+            font-size: 18px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+        .hero .announcement {
+            margin-top: 18px;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cambridge-dark);
+        }
+        .partners {
+            margin-top: 28px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+        .sponsor {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .sponsor .sponsor-logo {
+            max-width: 200px;
+            margin: 0 auto 10px;
+        }
+        .sponsor .sponsor-caption {
+            font-size: 0.95em;
+            color: var(--text-muted);
+        }
 
-    /* Sponsor/partner row in hero */
-    .partners {
-      margin-top: 28px;
-      padding-top: 10px;
-      border-top: 1px solid #ddd;
-    }
-    .sponsor {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .sponsor-logo {
-      max-width: 200px;
-      margin: 0 auto 10px;
-    }
-    .sponsor-caption {
-      font-size: 0.95em;
-      color: var(--text-muted);
-    }
+        /* Content spacing */
+        main.container { padding-top: 30px; padding-bottom: 40px; }
 
-    /* Utility classes */
-    .text-cambridge { color: var(--cambridge); }
-    .btn-cambridge {
-      background-color: var(--cambridge-dark);
-      border-color: var(--cambridge-dark);
-      color: #fff;
-    }
-    .btn-cambridge:hover {
-      background-color: #4c745f;
-      border-color: #4c745f;
-      color: #fff;
-    }
+        /* Existing rubric styles */
+        .rubric1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .rubric2 {
+            font-size: 0.9em;
+            font-style: italic;
+            text-align: center;
+            margin: 12px 10px 0;
+            color: var(--text-muted);
+            max-width: 560px;
+        }
 
-    /* Content spacing */
-    main.container {
-      padding-top: 30px;
-      padding-bottom: 40px;
-    }
-
-    /* Your existing rubric styles, lightly adjusted */
-    .rubric1 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .rubric2 {
-      font-size: 0.9em;
-      font-style: italic;
-      text-align: center;
-      margin: 12px 10px 0;
-      color: var(--text-muted);
-      max-width: 560px;
-    }
-
-    .winner { font-style: italic; }
-  </style>
+        .winner { font-style: italic; }
+    </style>
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-default">
-    <div class="container"><!-- use .container to match page width -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed"
-                data-toggle="collapse"
-                data-target="#navbar"
-                aria-expanded="false"
-                aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+    <!-- NAVBAR (uses .container to match content width) -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button"
+                        class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#navbar"
+                        aria-expanded="false"
+                        aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-        <a class="navbar-brand" href="/" style="display:flex; align-items:center; gap:14px;">
-          <img src="img/crest.png" alt="University crest" width="40" height="44">
-          <span>The Harding Prize</span>
-        </a>
-      </div>
+                <a class="navbar-brand" href="/" style="display:flex;align-items:center;">
+                    <img src="img/crest.png" alt="UC crest" width="40" height="44" style="margin-right:10px;">
+                    <span>The Harding Prize</span>
+                </a>
+            </div>
 
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf366IYkLY8pGYD2ZP5HaxPsyWGKbDnjoqRfCyHRHJJCiubSQ/viewform?usp=header">
-              Nomination Form
-            </a>
-          </li>
-
-          <!-- Example dropdown with proper structure (optional) -->
-          <!--
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-               aria-haspopup="true" aria-expanded="false">
-              About <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="/pages-output/">The Harding Prize for Trustworthy Communication</a></li>
-            </ul>
-          </li>
-          -->
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO BANNER (title + tagline + announcement + 3 logos with captions) -->
-  <header class="hero" role="banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 text-center">
-          <h1 class="site-title">The Harding Prize for Trustworthy Communication</h1>
-          <p class="site-tagline">…for communication that helps</p>
-          <p class="announcement">
-            <span class="text-cambridge"><strong>Submissions for the 2025 Harding Prize are now open</strong></span>
-          </p>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf366IYkLY8pGYD2ZP5HaxPsyWGKbDnjoqRfCyHRHJJCiubSQ/viewform?usp=header" target="_blank" rel="noopener">
+                            Nomination Form
+                        </a>
+                    </li>
+                    <!-- Optional dropdown (fixing structure; currently hidden) -->
+                    <!--
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            About <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/pages-output/">The Harding Prize for Trustworthy Communication</a></li>
+                        </ul>
+                    </li>
+                    -->
+                </ul>
+            </div>
         </div>
-      </div>
+    </nav>
 
-      <div class="row partners">
-        <div class="col-sm-4 sponsor">
-          <a href="https://senseaboutscience.org/" target="_blank" rel="noopener">
-            <img class="img-responsive sponsor-logo" src="img/sense.png" alt="Sense about Science logo">
-          </a>
-          <p class="sponsor-caption">
-            Sense about Science champions the public interest in sound science and ensures evidence is recognised in public life.
-          </p>
+    <!-- HERO BANNER -->
+    <header class="hero" role="banner">
+        <div class="container">
+            <h1 class="site-title">The Harding Prize for Trustworthy Communication</h1>
+            <p class="site-tagline">…for communication that helps</p>
+            <p class="announcement"><span style="color:#A3C1AD"><strong>Submissions for the 2025 Harding prize are now open</strong></span></p>
+
+            <!-- Partner logos + captions -->
+            <div class="row partners">
+                <div class="col-sm-4 sponsor">
+                    <a href="https://senseaboutscience.org/" target="_blank" rel="noopener">
+                        <img src="img/sense.png" alt="Sense About Science Logo" class="sponsor-logo">
+                    </a>
+                    <p class="sponsor-caption">Sense about Science champions the public interest in sound science and ensures evidence is recognised in public life.</p>
+                </div>
+
+                <div class="col-sm-4 sponsor">
+                    <a href="https://statslab.cam.ac.uk/" target="_blank" rel="noopener">
+                        <img src="img/Stats Logo.png" alt="Stats Lab Logo" class="sponsor-logo">
+                    </a>
+                    <p class="sponsor-caption">Everyone has a right to balanced evidence on issues important to them, presented in a transparent way, to inform but not persuade.</p>
+                </div>
+
+                <div class="col-sm-4 sponsor">
+                    <a href="https://sciencemediacentre.org" target="_blank" rel="noopener">
+                        <img src="img/sms.png" alt="Science Media Centre Logo" class="sponsor-logo">
+                    </a>
+                    <p class="sponsor-caption">The Science Media Centre ensures the public have access to the best scientific evidence and expertise through the news media.</p>
+                </div>
+            </div>
         </div>
+    </header>
 
-        <div class="col-sm-4 sponsor">
-          <a href="https://statslab.cam.ac.uk/" target="_blank" rel="noopener">
-            <img class="img-responsive sponsor-logo" src="img/Stats Logo.png" alt="University of Cambridge Statistical Laboratory logo">
-          </a>
-          <p class="sponsor-caption">
-            Everyone has a right to balanced evidence on issues important to them, presented in a transparent way, to inform but not persuade.
-          </p>
-        </div>
-
-        <div class="col-sm-4 sponsor">
-          <a href="https://sciencemediacentre.org" target="_blank" rel="noopener">
-            <img class="img-responsive sponsor-logo" src="img/sms.png" alt="Science Media Centre logo">
-          </a>
-          <p class="sponsor-caption">
-            The Science Media Centre ensures the public have access to the best scientific evidence and expertise through the news media.
-          </p>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- MAIN CONTENT -->
-  <main class="container" role="main">
-    <!-- Intro paragraphs -->
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <h4 class="text-center" style="margin: 10px 0 0;">
-          When we have a decision to make, or we want to understand someone else’s decision, we often look for a source of trustworthy evidence on the subject. Yet balanced, useful evidence can be hard to find.
-        </h4>
-        <br/>
-        <h4 class="text-center" style="margin: 0;">
-          In association with <i>Sense About Science</i> and the <i>Science Media Centre</i>, the <i>University of Cambridge Statistical Laboratory</i> celebrates those who tackle the communication of evidence well, with the annual Harding Prizes for Trustworthy Communication.
-        </h4>
-        <br/>
-        <h4 class="text-center" style="margin: 0;">
-          These prizes are designed to reward those who are trying to help their audiences make up their own minds on the basis of the best evidence available: communication purely for the benefit of the audience.
-        </h4>
-      </div>
-    </div>
-
-    <hr/>
-
-    <!-- Core sections (kept from your page, with minor tidy) -->
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-
-        <h3>What kind of evidence?</h3>
-        <p>The Harding Prizes are specifically for those who try to gather together the information that helps someone make a decision, or make their mind up about a subject, <b>without trying to tell them what to do</b>.</p>
-        <p>It might be designed for a general audience, to help people make a significant decision in their own daily life: about their personal finances, their health, their education, or a big life change.</p>
-        <p>It might be designed for a more specialist audience, to help those making a decision on behalf of others: perhaps if they’re policymakers, head teachers, or business leaders.</p>
-        <p>Maybe it will help people make a decision about what to think: on the pros and cons of a big issue - like nuclear power, tax policies or drugs laws.</p>
-
-        <h3>What subjects and formats?</h3>
-        <p>Those above are just examples. The range of eligible subjects, audiences and media is wide, and could include almost anything involving a significant decision. Scroll down to see previous winners and short-listed entries to see the kind of thing that we're looking for.
-          For the 2025 prize, there will again be two categories: one for communications of evidence to a specialist audience, and one for communications to a broader, general public audience.</p>
-        <p>‘Communication' might mean a news article, a social media posting, a website, a leaflet, a report, original research in a journal, a podcast, TV, a speech... As long as it can be taken in within ten minutes (e.g. not a book or a long film), and you can provide it to us in full for judging.</p>
-        <p>Communications must be in English but can originate from any country, worldwide. Entries must have been placed in the public domain during 2025.</p>
-
-        <h3>How is ‘good’ judged?</h3>
-        <p>To aid decision-making, good communication should, above all, be trustworthy. It should primarily serve the interests of the audience, not the communicator. It will present evidence in a balanced and clear way, and it should include uncertainties and limitations of the evidence.</p>
-        <p>Information should be appropriate for its audience in content, length, depth and format. And it should be clear about what it’s trying to achieve: who is it helping, and what decision are they making?</p>
-
-        <h3>The prize</h3>
-        <p>Each Harding Prize is worth <b>£3,141.59</b> to celebrate the number π.</p>
-
-        <h3>Judging panel</h3>
-        <p>The final Harding Prize winners will be chosen by a panel including: David Spiegelhalter, Alf Collins, David Schley and Alexandra Freeman.</p>
-
-        <h3 id="who-can-enter" style="padding-top:20px">Who can enter?</h3>
-        <p>Anyone can submit an entry – which can either be a piece of your own work, or something that you have seen and appreciated. In order to be awarded the Harding Prize, the originator of the communication must be correctly identifiable. Communications must be in English but can originate from any country, worldwide. Nominators will remain anonymous, so don't worry about being seen to nominate yourself.</p>
-        <p>The judges’ decision will be final and correspondence will not be entered into.</p>
-        <p>Opening date: <b>12th January 2026</b>.</p>
-        <p>Closing date: <b>15th February 2026</b>.</p>
-
-        <h2>Submitting a nomination</h2>
-        <p>
-          Either email your nomination to
-          <a href="mailto:admin@hardingprize.com?subject=Harding Prize Nomination">admin@hardingprize.com</a>,
-          or use the Nomination Form. Some domains may not be able to use the form because they restrict the ability to upload files. In that case, please make your nomination by email giving us the nomination (URL or file), when it was published, and why you are nominating it.
-        </p>
-        <div class="text-center" style="padding-top:10px;">
-          <a class="btn btn-lg btn-cambridge"
-             href="https://docs.google.com/forms/d/e/1FAIpQLSf366IYkLY8pGYD2ZP5HaxPsyWGKbDnjoqRfCyHRHJJCiubSQ/viewform?usp=header">
-            Nomination Form
-          </a>
+    <!-- MAIN CONTENT -->
+    <main class="container" role="main">
+        <!-- Intro paragraphs -->
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h4 class="text-center" style="margin: 10px 0 0;">
+                    When we have a decision to make, or we want to understand someone else’s decision, we often look for a source of trustworthy evidence on the subject. Yet balanced, useful evidence can be hard to find.
+                </h4>
+                <br/>
+                <h4 class="text-center" style="margin: 0;">
+                    In association with <i>Sense About Science</i> and the <i>Science Media Centre</i>, the <i>University of Cambridge Statistical Laboratory</i> celebrates those who tackle the communication of evidence well, with the annual Harding Prizes for Trustworthy Communication.
+                </h4>
+                <br/>
+                <h4 class="text-center" style="margin: 0;">
+                    These prizes are designed to reward those who are trying to help their audiences make up their own minds on the basis of the best evidence available: communication purely for the benefit of the audience.
+                </h4>
+            </div>
         </div>
 
-        <br/><br/>
+        <hr/>
 
-        <!-- Quotation block -->
-        <blockquote class="text-center" style="font-size:16px; margin: 10px 50px;">
-          <p>We believe that everyone has a right to balanced evidence on issues important to them; evidence presented in a transparent way, to inform but not persuade. So often, communication is focussed on giving people a ‘take home message’, telling them what to think or do.</p>
-        </blockquote>
+        <!-- Core sections (original text preserved) -->
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
 
-        <!-- Winners sections preserved (2024, 2023, 2022, 2021) -->
-        <!-- You can keep your existing blocks below. Only small spacing/markup tidies were applied. -->
+                <h3>What kind of evidence?</h3>
+                <p>The Harding Prizes are specifically for those who try to gather together the information that helps someone make a decision, or make their mind up about a subject, <b>without trying to tell them what to do</b>.
+                </p>
 
-        <div style="border: 3px solid grey; padding:10px 20px 20px 20px; margin:20px 0; border-radius:10px">
-          <h3>2024's Winners</h3>
-          <p>In 2024 the judges awarded two Harding Prizes for Trustworthy Communication - one for a general and one for a specialist audience</p>
-          <p>The article by the reporter <b>Michael Le Page</b> for the New Scientist on whether <a href="https://www.newscientist.com/article/2422260-should-everyone-start-eating-snakes-to-save-the-planet/">everyone should start eating snakes to save the planet</a> won the General Public Audience Award.
-          The judges thought that <i>“This fascinating topic was covered in an elegant and concise manner, offering balanced information”</i> and pointed out that <i>“the article provided a refreshing and interesting angle while at the same time avoiding the sensationalist trap.”</i>.</p>
-          <p>The research blog on <a href="https://www.parkinsons.org.uk/research/research-blog/trials-treatments/stem-cell-therapy-parkinsons-are-we-getting-closer">Parkinson's UK website on Stem cell therapy</a> by lead author <b>Emma Rodgers</b> and contributing authors <b>Becky Jones</b> and <b>Katherine Fletcher</b> won the Specialist Audience Award.
-          The judges commented that <i>“it was really clear, easy to read summary that would help patients and their families.”</i> They pointed out that <i>“for a charity focussed on a single disease, it is particularly refreshing to see something this balanced”</i> and stated that they <i>“particularly appreciated the final paragraph which gave an important warning about over-optimism without pouring cold water on hope”</i>.</p>
-          <blockquote>
-            <p>“The judging panel would like to congratulate the winners on their excellent contributions.
-            The high standard of the entries for this competition shows that, among all the exaggerations and misinformation, there are also many trustworthy sources of information. We are so pleased to recognise and celebrate the best of these."</p>
-          </blockquote>
+                <p>It might be designed for a general audience, to help people make a significant decision in their own daily life: about their personal finances, their health, their education, or a big life change.
+                </p>
+
+                <p>It might be designed for a more specialist audience, to help those making a decision on behalf of others: perhaps if they’re policymakers, head teachers, or business leaders.</p>
+
+                <p>Maybe it will help people make a decision about what to think: on the pros and cons of a big issue - like nuclear power, tax policies or drugs laws.
+                </p>
+
+                <h3>What subjects and formats?</h3>
+                <p>Those above are just examples. The range of eligible subjects, audiences and media is wide, and could include almost anything involving a significant decision. Scroll down to see previous winners and short-listed entries to see the kind of thing that we're looking for.
+                    For the 2025 prize, there will again be two categories: one for communications of evidence to a specialist audience, and one for communications to a broader, general public audience. </p>
+
+                <p>‘Communication' might mean a news article, a social media posting, a website, a leaflet, a report, original research in a journal, a podcast, TV, a speech... As long as it can be taken in within ten minutes (e.g. not a book or a long film), and
+                    you can provide it to us in full for judging. </p>
+
+                <p>Communications must be in English but can originate from any country, worldwide. Entries must have been placed in the public domain during 2025.
+                </p>
+
+                <h3>How is ‘good’ judged?</h3>
+                <p>To aid decision-making, good communication should, above all, be trustworthy. It should primarily serve the interests of the audience, not the communicator. It will present evidence in a balanced and clear way, and it should include
+                    uncertainties and limitations of the evidence.
+                </p>
+                <p>Information should be appropriate for its audience in content, length, depth and format. And it should be clear about what it’s trying to achieve: who is it helping, and what decision are they making?
+                </p>
+
+                <h3>The prize</h3>
+                <p>Each Harding Prize is worth <b>£3,141.59</b> to celebrate the number π.</p>
+
+                <h3>Judging panel</h3>
+
+                <p>
+                    The final Harding Prize winners will be chosen by a panel including: David Spiegelhalter, Alf Collins, David Schley and Alexandra Freeman.
+                </p>
+
+                <!-- submission form text starts -->
+                <h3 style="padding-top:20px" id="who-can-enter">Who can enter?</h3>
+                <p>Anyone can submit an entry – which can either be a piece of your own work, or something that you have seen and appreciated. In order to be awarded the Harding Prize, the originator of the communication must be correctly identifiable.Communications must be in English but can originate from any country, worldwide.Nominators will remain anonymous, so don't worry about being seen to nominate yourself.</p>
+
+                <p>The judges’ decision will be final and correspondence will not be entered into.</p>
+
+                <p>Opening date: <b>12th January 2026</b>.</p>
+
+                <p>Closing date: <b>15th February 2026</b>.</p>
+
+                <h2>Submitting a nomination</h2>
+                <p>Either email your nomination to <a href="mailto:admin@hardingprize.com?subject=Harding Prize Nomination">admin@hardingprize.com</a>, or use the Nomination Form. Some domains may not be able to use the form because they
+                    restrict the ability to upload files. In that case, please make your nomination by email giving us the nomination (URL or file), when it was published, and why you are nominatng it.</p>
+                <div class="text-center" style="padding-top:20px">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf366IYkLY8pGYD2ZP5HaxPsyWGKbDnjoqRfCyHRHJJCiubSQ/viewform?usp=header" target="_blank" rel="noopener">
+                        <button type="button" class="btn btn-lg btn-primary">Nomination Form</button>
+                    </a>
+                </div>
+
+                <br><br>
+
+                <!-- Quotation block -->
+                <h4 class="text-center" style="margin:0 50px">
+                    <blockquote>
+                        <p>We believe that everyone has a right to balanced evidence on issues important to them; evidence presented in a transparent way, to inform but not persuade. So often, communication is focussed on giving people a ‘take home message’, telling them what to
+                        think or do.</p>
+                    </blockquote>
+                </h4>
+
+                <br><br>
+
+                <!-- previous winners text starts -->
+                <!-- 2024's Winners (full original) -->
+                <div style="border: 3px solid grey; padding:10px 20px 20px 20px;margin:20px 40px; border-radius:10px">
+                    <h3>2024's Winners</h3>
+                    <p>In 2024 the judges awarded two Harding Prizes for Trustworthy Communication - one for a general and one for a specialist audience</p>
+
+                    <p>The article by the reporter <b>Michael Le Page</b> for the New Scientist on whether <a href="https://www.newscientist.com/article/2422260-should-everyone-start-eating-snakes-to-save-the-planet/">everyone should start eating snakes to save the planet</a> won the General Public Audience Award. 
+                        The judges thought that <i>“This fascinating topic was covered in an elegant and concise manner, offering balanced information”</i> and pointed out that <i>“the article provided a refreshing and interesting angle while at the same time avoiding the sensationalist trap.”</i>.</p>
+                    
+                    <p>The research blog on <a href="https://www.parkinsons.org.uk/research/research-blog/trials-treatments/stem-cell-therapy-parkinsons-are-we-getting-closer">Parkinson's UK website on Stem cell therapy</a> by lead author <b>Emma Rodgers</b> and contributing authors <b>Becky Jones</b> and <b>Katherine Fletcher</b> won the Specialist Audience Award. 
+                        The judges commented that <i>“it was really clear, easy to read summary that would help patients and their families.”</i>. They pointed out that <i>“for a charity focussed on a single disease, it is particularly refreshing to see something this balanced”</i> and stated that they <i>“particularly appreciated the final paragraph which gave an important warning about over-optimism without pouring cold water on hope”</i>.</p>
+                    <br>
+                    <br>                        
+                    <p>
+                        <div style="border: 3px solid grey; padding:10px 20px 20px 20px;margin:20px 40px; border-radius:10px">
+                        <p>“The judging panel would like to congratulate the winners on their excellent contributions. 
+                            The high standard of the entries for this competition shows that, among all the exaggerations and misinformation, there are also many trustworthy sources of information. We are so pleased to recognise and celebrate the best of these."</p>
+                    </div>
+                </div>
+
+                <!-- 2023's Winners (full original) -->
+                <div style="border: 3px solid grey; padding:10px 20px 20px 20px;margin:20px 40px; border-radius:10px">
+                    <h3>2023's Winners</h3>
+                    <p>In 2023 the prize was again awarded to two categories: one for communication for a general public audience and one for an expert audience.</p>
+
+                    <p><b>Clare Wilson</b>’s feature article won the General Public Audience Award. The article focused on <a href="https://www.newscientist.com/article/mg25734303-400-new-dna-tests-predict-your-disease-risk-are-we-ready-for-them/">new DNA tests that are used to predict disease risk</a>. The judges thought that “in a field of glittering promises, this was a clear, impartial, evidence based exploration into what’s currently known about polygenetic testing and whether it is useful to the individual.” 
+                        They stressed that “the article presented the benefits and problems of the tests in a balanced and thoughtful way…” and that the article was tailored to the needs of the targeted audience and “did not duck the open questions and uncertainties in the research.”</p>
+
+                    <p><b>Katharine Lang</b>’s specialist article addressed on <a href="https://www.bmj.com/content/382/bmj.p1666.full">the use of Paxlovid and other Covid antivirals in current treatment regimes</a> and won the Specialist Audience Award. The judges commented that this short pithy piece targeted at busy doctors <i>“successfully offered prescribing practitioners solid information in a complex and evolving field.”</i>. 
+                        The judges felt that Lang <i>“broke down their piece into a series of key questions which might be asked by clinicians and suggested a balanced range of evidence and well sourced expert opinion in response. This approach acknowledged the individual judgements involved in the prescribing process whilst sharing the latest insights in an informed and accessible format. The judges applauded the piece for being genuinely useful.”</i></p>
+                    <br>
+                    <br>                        
+                    <p>David Spiegelhalter, Chair of the Winton Centre for Risk &amp; Evidence Communication said:
+                    <blockquote><p></p>“I congratulate the winners for their trustworthy communication!  They deal with important and complex issues - polygenic risk scores and Covid treatments - and deliberately engage with a variety of viewpoints. They raise the understanding of their audiences, without trying to persuade them of a particular point-of-view.  Just what we need."</blockquote></p>
+                </div>
+
+                <!-- 2022's Winners (full original) -->
+                <div style="border: 3px solid grey; padding:10px 20px 20px 20px;margin:20px 40px; border-radius:10px">
+                    <h3>2022's Winners</h3>
+
+                    <p style="color: grey">In 2022 we decided to have two categories of winner: one for information for a public audience and one for an expert audience.</p>
+                    <p>
+                        The <a href="https://ifs.org.uk/calculators/what-could-happen-nhs-waiting-lists-england" target="_blank">IFS’s interactive NHS waiting list calculator</a> allows people to play around with ‘what if…’ scenarios to see the
+                        effect of different factors on NHS waiting lists. The judges thought that this was a ‘ground breaking’ piece of communication worthy of the Public Audience Award. <i>“Given the importance of data in our society”</i>, said
+                        one judge, <i>“playing with this tool, 
+                        I feel I have seen the future in democratising the models which increasingly shape our lives.”</i>
+                    </p>
+                    <p>
+                        What was particularly important was that it shows <i>“how mathematical models which affect real life decision making are subject to change when the assumptions 
+                        and parameters behind them change, and so the uncertainties and the challenges of using data to reach conclusions.”</i>
+                    </p>
+                    <br>
+                    <p>
+                        The <a href="https://post.parliament.uk/research-briefings/post-pn-0672/" target="_blank">Parliamentary Office of Science &amp; Technology’s ’Green Steel’ briefing for MPs</a>, on how steel production in the UK, responsible
+                        for about 2% of the UK’s total greenhouse gas emissions, can be decarbonised, won the Expert Audience Award. The judges commented that this was
+                        <i>“an excellent example of a complex technical subject explained with superb clarity. Its tone of detached, thoughtful authority was consistently 
+                            accessible and jargon free. The document offered very detailed references; the limitations of the evidence were included and at no point did the 
+                            document attempt to steer the reader to a particular viewpoint.”</i>
+                    </p>
+                    <p>
+                        They added that <i>“The risk of overwhelming the reader was deftly avoided by a clear layout and strong sign posting. The Overview Box and two other boxes 
+                            outlining background information, were models of accurate efficiency.”</i>
+                    </p>
+                    <br>
+                    <p>
+                        The committee also wants to congratulate all those who were shortlisted for the 2022 award, which included a great range of subjects, formats and styles:
+                        <ul>
+                            <li><a href="https://dynomight.net/stoves/" target="_blank">Dynomight: Gas stoves and health</a></li>
+                            <li><a href="https://www.vice.com/en/article/88qge4/the-new-study-on-serotonin-and-depression-isnt-about-antidepressants-chemical-imbalance" target="_blank">Shayla Love (Vice): Serotonin and depression</a></li>
+                            <li><a href="https://youtu.be/ZfPSKEEOwuI" target="_blank">MinuteEarth: How do abortion pills work?</a></li>
+                            <li><a href="https://www.bgs.ac.uk/download/deep-sea-mining-evidence-review/" target="_blank">British Geological Survey: report on deep sea mining</a></li>
+                            <li><a href="https://twitter.com/jburnmurdoch/status/1562004612172873728?s=20&t=2ZxZdXIBpNnuYjs-EM4CwA%20%20(https://twitter.com/jburnmurdoch/status/1562005086519394304?s=20&t=3zIdwD_K40nmCI2aLgXUvw)" target="_blank">John Burn-Murdoch (Financial Times): non-Covid excess deaths twitter thread</a></li>
+                            <li><a href="https://hannahritchie.substack.com/p/lithium-electric-vehicles" target="_blank">Hannah Ritchie: Lithium and electric vehicles</a></li>
+                        </ul>
+                    </p>
+                    <br>
+                    <p><b>David Spiegelhalter, Chair of the Winton Centre for Risk &amp; Evidence Communication</b> said: </p>
+                    <blockquote>
+                        <p>“We are bombarded by messaging that purports to be informing us, but is actually trying to manipulate our emotions and persuade us to think or act in a certain way - say by inducing anxiety, prematurely reassuring, or only
+                            telling one side of the story. This prize celebrates those who genuinely try and tell it how it is, to help us all understand more and make better decisions. All the shortlisted entries deserve our sincere congratulations."
+                        </p>
+                    </blockquote>
+                </div>
+
+                <!-- 2021's Winners (full original) -->
+                <div style="border: 3px solid grey; padding:10px 20px 20px 20px;margin:20px 40px; border-radius:10px">
+                    <h3>2021's Winners</h3>
+
+                    <p>The Harding Prize for 2021 was jointly won by the <a href="https://wintoncentre.maths.cam.ac.uk/news/winners-2021-harding-prize-useful-and-trustworthy-communication-announced/#:~:text=ONS%20Covid%20Infection%20Survey" target="_blank">ONS Covid Infection Survey</a>                                and the <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013587.pub2/full" target="_blank">Cochrane Review of Hydroxychloroquine for Covid-19</a>.
+                    </p>
+
+
+                    <p><b>Helen Boaden, Chair of the judging panel</b>, commented:</p>
+                    <blockquote>
+                        <p>“It's never been more important for the public and policy makers to have access to the best possible evidence before they make significant decisions for themselves or others. </p>
+                        <p>Both our winners set the gold standard for clearly communicating accurate, trustworthy, transparent data without frills or spin. The panel is delighted to jointly award them the inaugural Harding Prize.”</p>
+                    </blockquote>
+
+                    <p>
+                        The ONS Covid Infection Survey are using their prize money to support lectures, presentations and events in Universities, themed around ‘statistics for the public good’. They are targeting universities with a high proportion of students from under-represented
+                        backgrounds to highlight the importance of our data for shaping government policy and therefore encourage them to take up a career in statistics.
+                    </p>
+                </div>
+
+                <!-- Original long 2021 announcement block (commented in your file) left out intentionally, as it was commented out -->
+            </div>
         </div>
+    </main>
 
-        <div style="border: 3px solid grey; padding:10px 20px 20px 20px; margin:20px 0; border-radius:10px">
-          <h3>2023's Winners</h3>
-          <p>In 2023 the prize was again awarded to two categories: one for communication for a general public audience and one for an expert audience.</p>
-          <p><b>Clare Wilson</b>’s feature article won the General Public Audience Award. The article focused on <a href="https://www.newscientist.com/article/mg25734303-400-new-dna-tests-predict-your-disease-risk-are-we-ready-for-them/">new DNA tests that are used to predict disease risk</a>. The judges thought that “in a field of glittering promises, this was a clear, impartial, evidence based exploration into what’s currently known about polygenetic testing and whether it is useful to the individual.”
-          They stressed that “the article presented the benefits and problems of the tests in a balanced and thoughtful way…” and that the article was tailored to the needs of the targeted audience and “did not duck the open questions and uncertainties in the research.”</p>
-          <p><b>Katharine Lang</b>’s specialist article addressed on <a href="https://www.bmj.com/content/382/bmj.p1666.full">the use of Paxlovid and other Covid antivirals in current treatment regimes</a> and won the Specialist Audience Award. The judges commented that this short pithy piece targeted at busy doctors <i>“successfully offered prescribing practitioners solid information in a complex and evolving field.”</i>.
-          The judges felt that Lang <i>“broke down their piece into a series of key questions which might be asked by clinicians and suggested a balanced range of evidence and well sourced expert opinion in response. This approach acknowledged the individual judgements involved in the prescribing process whilst sharing the latest insights in an informed and accessible format. The judges applauded the piece for being genuinely useful.”</i></p>
-          <blockquote>
-            <p>“I congratulate the winners for their trustworthy communication! They deal with important and complex issues - polygenic risk scores and Covid treatments - and deliberately engage with a variety of viewpoints. They raise the understanding of their audiences, without trying to persuade them of a particular point-of-view. Just what we need."</p>
-          </blockquote>
-        </div>
-
-        <div style="border: 3px solid grey; padding:10px 20px 20px 20px; margin:20px 0; border-radius:10px">
-          <h3>2022's Winners</h3>
-          <p style="color: grey">In 2022 we decided to have two categories of winner: one for information for a public audience and one for an expert audience.</p>
-          <p>
-            The <a href="https://ifs.org.uk/calculators/what-could-happen-nhs-waiting-lists-england" target="_blank">IFS’s interactive NHS waiting list calculator</a> allows people to play around with ‘what if…’ scenarios to see the effect of different factors on NHS waiting lists.
-            The judges thought that this was a ‘ground breaking’ piece of communication worthy of the Public Audience Award.
-          </p>
-          <p>
-            The <a href="https://post.parliament.uk/research-briefings/post-pn-0672/" target="_blank">Parliamentary Office of Science &amp; Technology’s ’Green Steel’ briefing for MPs</a> won the Expert Audience Award.
-          </p>
-          <!-- (rest unchanged for brevity) -->
-        </div>
-
-        <div style="border: 3px solid grey; padding:10px 20px 20px 20px; margin:20px 0; border-radius:10px">
-          <h3>2021's Winners</h3>
-          <!-- (content preserved) -->
-        </div>
-
-      </div>
-    </div>
-  </main>
-
-  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  <script src="/js/highlight.pack.js" type="application/javascript"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="/js/highlight.pack.js" type="application/javascript"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
 ``
