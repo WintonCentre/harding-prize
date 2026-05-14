@@ -199,3 +199,92 @@ code,
         text-align: left;
     }
 }
+/* ===== MODERN UPGRADE STYLES (ADD BELOW EXISTING CSS) ===== */
+
+/* Hero section */
+.hero {
+    background: linear-gradient(135deg, #A3C1AD, #6FA8DC);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+/* Buttons */
+.btn-modern {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 10px 6px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-primary-modern {
+    background: white;
+    color: #333;
+}
+
+.btn-secondary-modern {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+/* Sections */
+.section {
+    padding: 50px 0;
+}
+
+/* Feature list */
+.features {
+    list-style: none;
+    padding-left: 0;
+}
+
+.features li {
+    margin-bottom: 8px;
+}
+
+/* Card layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* Improve content readability */
+#content {
+    line-height: 1.7;
+}
+
+/* Headings spacing */
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Alternate section background */
+.alt-bg {
+    background: #ffffff;
+    padding: 50px 30px;
+    border-radius: 6px;
+}
+``
