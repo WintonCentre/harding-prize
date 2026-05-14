@@ -90,7 +90,7 @@ body {
 }
 
 #content {
-    background-color: #fafafa !important; /* Add !important here */
+    background-color: orange !important; /* Add !important here */
     border-radius: 3px;
     box-shadow: 0 0 0 0, 0 6px 12px rgba(34, 34, 34, 0.1);
 }
