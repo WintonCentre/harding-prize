@@ -199,3 +199,12 @@ code,
         text-align: left;
     }
 }
+
+main.container {
+    background-color: transparent;
+}
+
+.container {
+    background-color: transparent !important;
+}
+
