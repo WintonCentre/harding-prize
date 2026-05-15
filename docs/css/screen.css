@@ -203,11 +203,12 @@ code,
 main.container {
     background-color: transparent;
 }
+/* Restore proper winner box styling */
 .winner-box {
-    background-color: #f9f9f9;
-    border: 1px solid #d2ded7;
-    padding: 25px 30px;
-    margin: 25px 40px;
+    background-color: #ffffff;  /* change this if you want */
+    border: 2px solid #a0a0a0;  /* THIS is the missing line */
+    padding: 15px 25px 20px 25px;
+    margin: 20px 40px;
     border-radius: 10px;
 }
 
