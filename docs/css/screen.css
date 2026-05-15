@@ -204,12 +204,11 @@ main.container {
     background-color: transparent;
 }
 .winner-box {
-    background-color: #ffffff;
-    border: 1px solid #dcdcdc;
+    background-color: #EEF4F1;
+    border: 1px solid #d2ded7;
     padding: 25px 30px;
     margin: 25px 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
 
